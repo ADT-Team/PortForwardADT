@@ -1,4 +1,4 @@
-﻿/**
+/**
  * ---------------------------------------------------------
  * This program is specially designed for ADT-Team.com
  * @author GROM - <botx68@gmail.com>
@@ -164,13 +164,13 @@ namespace PortForwardADT
                     // Если обе галочки нажаты для входящих/исходящих.
                     if (Incoming.Checked && Outbound.Checked)
                     {
-                        Process.Start("cmd.exe", "/C " + "netsh advfirewall firewall add rule name=" + getNames + " " + "dir=" + "in" + " " + "action=" + sCheckBox + " " + "protocol=" + Protocol + " " + "enable=yes");
-                        Process.Start("cmd.exe", "/C " + "netsh advfirewall firewall add rule name=" + getNames + " " + "dir=" + "out" + " " + "action=" + sCheckBox + " " + "protocol=" + Protocol + " " + "enable=yes");
+                        Process.Start("cmd.exe", "/C " + "netsh advfirewall firewall add rule name=" + getNames + " " + "dir=" + "in" + " " + "action=" + sCheckBox + " " + "protocol=" + Protocol + " " + "localport=" + getPorts + " " + "enable=yes");
+                        Process.Start("cmd.exe", "/C " + "netsh advfirewall firewall add rule name=" + getNames + " " + "dir=" + "out" + " " + "action=" + sCheckBox + " " + "protocol=" + Protocol + " " + "localport=" + getPorts + " " + "enable=yes");
 
                     }
                     else // Если выбрана определенная галочка in/out
                     {
-                        Process.Start("cmd.exe", "/C " + "netsh advfirewall firewall add rule name=" + getNames + " " + "dir=" + Dir + " " + "action=" + sCheckBox + " " + "protocol=" + Protocol + " " + "enable=yes");
+                        Process.Start("cmd.exe", "/C " + "netsh advfirewall firewall add rule name=" + getNames + " " + "dir=" + Dir + " " + "action=" + sCheckBox + " " + "protocol=" + Protocol + " " + "localport=" + getPorts + " " + "enable=yes");
                     }
             }
 
@@ -187,12 +187,12 @@ namespace PortForwardADT
                     // Если обе галочки нажаты для входящих/исходящих.
                     if (Incoming.Checked && Outbound.Checked)
                     {
-                        Process.Start("cmd.exe", "/C " + "netsh advfirewall firewall add rule name=" + getNames + " " + "dir=" + "in" + " " + "action=" + sCheckBox + " " + "protocol=" + Protocol + " " + "enable=yes");
-                        Process.Start("cmd.exe", "/C " + "netsh advfirewall firewall add rule name=" + getNames + " " + "dir=" + "out" + " " + "action=" + sCheckBox + " " + "protocol=" + Protocol + " " + "enable=yes");
+                        Process.Start("cmd.exe", "/C " + "netsh advfirewall firewall add rule name=" + getNames + " " + "dir=" + "in" + " " + "action=" + sCheckBox + " " + "protocol=" + Protocol + " " + "localport=" + getPorts + " " + "enable=yes");
+                        Process.Start("cmd.exe", "/C " + "netsh advfirewall firewall add rule name=" + getNames + " " + "dir=" + "out" + " " + "action=" + sCheckBox + " " + "protocol=" + Protocol + " " + "localport=" + getPorts + " " + "enable=yes");
                     }
                     else // Если выбрана определенная галочка in/out
                     {
-                        Process.Start("cmd.exe", "/C " + "netsh advfirewall firewall add rule name=" + getNames + " " + "dir=" + Dir + " " + "action=" + sCheckBox + " " + "protocol=" + Protocol + " " + "enable=yes");
+                        Process.Start("cmd.exe", "/C " + "netsh advfirewall firewall add rule name=" + getNames + " " + "dir=" + Dir + " " + "action=" + sCheckBox + " " + "protocol=" + Protocol + " " + "localport=" + getPorts + " " + "enable=yes");
                     }
             }
         }
